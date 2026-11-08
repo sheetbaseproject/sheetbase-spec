@@ -23,5 +23,10 @@ Dependencies: M1 needs M0; M2 needs M1; M3 needs M2; M4 needs M3 (type guessing 
 M5 needs M2 (it edits data) and benefits from M3; M6 needs M3 and M5; M7 needs M6; M8 needs
 everything. M4 and M5 can run in parallel.
 
-Each milestone is an issue epic in `sheetbaseproject/sheetbase` with one issue per deliverable;
-every PR closes an issue.
+The milestones are the exit criteria; the tracker in `sheetbaseproject/sheetbase` is cut
+differently. Work is organised as EPICs named with capital letters (`EPIC A` to `EPIC L`), each
+with phases that run in order (`A1`, `A2`, ...) and at most five tasks per phase that can run in
+parallel (`A1.1`, `A1.2`, ...). One issue per EPIC holds the phases as task lists; one issue per
+task holds the goal, the spec references, the acceptance checklist and its blockers. Milestones
+map onto EPICs many to many (M0 is A and B, M3 is E and F, M5 is H and I), the mapping and every
+issue number are in [the issue map](issue-map.md), and every PR closes an issue.
